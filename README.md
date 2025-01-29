@@ -24,12 +24,12 @@ pip install -r requirements.txt
 
 1. Clone the repository:
     ```bash
-    git clone <repository_url>
+    git clone "<repository_url>
     ```
 
 2. Navigate into the project directory:
     ```bash
-    cd <project_directory>
+    cd "<project_directory>
     ```
 
 3. Install dependencies:
@@ -46,10 +46,10 @@ Mines a new block, rewards the miner with 1 coin, and returns the new block.
 ```json
 {
     "message": "New block Forged",
-    "index": <block_index>,
-    "transactions": <list_of_transactions>,
-    "proof": <proof_of_work>,
-    "previous_hash": <previous_block_hash>
+    "index": "<block_index >",
+    "transactions": "<list_of_transactions >",
+    "proof": "<proof_of_work >",
+    "previous_hash": "<previous_block_hash>"
 }
 ```
 
@@ -61,14 +61,14 @@ Creates a new transaction. The request body must contain `sender`, `recipient`, 
 {
     "sender": "<sender_address>",
     "recipient": "<recipient_address>",
-    "amount": <transaction_amount>
+    "amount": "<transaction_amount>"
 }
 ```
 
 **Response:**
 ```json
 {
-    "message": "Transaction will be added to Block <block_index>"
+    "message": "Transaction will be added to Block \"<block_index>\""
 }
 ```
 
@@ -78,8 +78,8 @@ Returns the full blockchain along with its length.
 **Response:**
 ```json
 {
-    "chain": <list_of_blocks>,
-    "length": <blockchain_length>
+    "chain": "<list_of_blocks >",
+    "length": "<blockchain_length>"
 }
 ```
 
@@ -97,7 +97,7 @@ Registers new nodes to the blockchain network. The request body should contain a
 ```json
 {
     "message": "New nodes have been added",
-    "total_nodes": <list_of_all_nodes>
+    "total_nodes": "<list_of_all_nodes>"
 }
 ```
 
@@ -108,7 +108,7 @@ Checks the network for longer valid chains and replaces the local chain with the
 ```json
 {
     "message": "Our chain was replaced",
-    "new_chain": <new_chain_data>
+    "new_chain": "<new_chain_data>"
 }
 ```
 
