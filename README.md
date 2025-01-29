@@ -1,2 +1,4 @@
-# Python_Mini_Projects
-Python based Mini-Projects 
+# Python_Simple_Blockchain
+
+Python based Simple Blockchain
+
