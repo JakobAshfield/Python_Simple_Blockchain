@@ -12,6 +12,17 @@ transaction_manager = TransactionManager(blockchain)
 
 @app.route('/mine', methods=['GET'])
 def mine():
+    """
+    Mines a new block and adds it to the blockchain.
+
+    This function retrieves the last block, calculates the proof of work, 
+    creates a new transaction (rewarding the miner), and creates a new block 
+    with the proof and previous block hash. The newly mined block is then 
+    returned in the response.
+
+    Returns:
+    Response: A JSON response with the details of the newly mined block.
+    """
     last_block = blockchain.last_block
     last_proof = last_block['proof']
     proof = blockchain.proof_of_work(last_proof)
@@ -31,6 +42,18 @@ def mine():
 
 @app.route('/transactions/new', methods=['POST'])
 def new_transaction():
+    """
+    Creates a new transaction and adds it to the blockchain.
+
+    This function accepts transaction details (sender, recipient, amount) 
+    through a POST request. It then validates the required values and 
+    creates a new transaction. The transaction is added to the list 
+    of current transactions and will be included in the next block.
+
+    Returns:
+    Response: A JSON response with a message indicating the transaction 
+    will be added to the next block.
+    """
     values = request.get_json()
     required = ['sender', 'recipient', 'amount']
     if not all(k in values for k in required):
@@ -41,6 +64,15 @@ def new_transaction():
 
 @app.route('/chain', methods=['GET'])
 def full_chain():
+    """
+    Returns the full blockchain.
+
+    This function provides the entire chain of blocks in the blockchain, 
+    including the length of the chain.
+
+    Returns:
+    Response: A JSON response containing the blockchain and its length.
+    """
     response = {
         'chain': blockchain.chain,
         'length': len(blockchain.chain),
@@ -49,6 +81,16 @@ def full_chain():
 
 @app.route('/nodes/register', methods=['POST'])
 def register_nodes():
+    """
+    Registers new nodes to the blockchain network.
+
+    This function allows other nodes to register themselves with the blockchain 
+    network. The request must contain a list of node addresses. Each address 
+    is parsed and added to the set of registered nodes.
+
+    Returns:
+    Response: A JSON response confirming the nodes were added successfully.
+    """
     values = request.get_json()
     nodes = values.get('nodes')
     if nodes is None:
@@ -60,6 +102,17 @@ def register_nodes():
 
 @app.route('/nodes/resolve', methods=['GET'])
 def consensus():
+    """
+    Resolves conflicts in the blockchain network.
+
+    This function is responsible for checking the registered nodes for any 
+    longer valid chains. If a longer chain is found, the current chain is 
+    replaced with the new chain. This helps maintain consensus in the network.
+
+    Returns:
+    Response: A JSON response indicating whether the chain was replaced 
+    or is already authoritative.
+    """
     replaced = node_manager.resolve_conflicts()
     if replaced:
         response = {'message': 'Our chain was replaced', 'new_chain': blockchain.chain}
