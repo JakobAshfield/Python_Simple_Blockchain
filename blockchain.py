@@ -5,14 +5,20 @@ from time import time
 from uuid import uuid4
 
 from flask import Flask, jsonify, request
+from urllib.parse import urlparse
 
 class Blockchain(object):
     def __init__(self):
         self.chain = []
         self.current_transactions = []
+        self.nodes = set()
 
         #Genesis Block
         self.new_block(previous_hash = 1, proof = 100)
+
+    def register_node(self, address):
+        parsed_url = urlparse(address)
+        self.nodes.add(parsed)
     
     def new_block(self, proof, previous_hash = None):
         block = {
