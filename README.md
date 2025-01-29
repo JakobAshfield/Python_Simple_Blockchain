@@ -1,5 +1,3 @@
-
-<!--
 # Blockchain API
 
 This project implements a simple blockchain-based application with Flask for managing transactions and mining new blocks. It provides an API for performing operations such as creating transactions, mining blocks, viewing the blockchain, and resolving conflicts between nodes in a network.
@@ -140,4 +138,3 @@ To run the Flask app locally:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
--->
