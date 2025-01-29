@@ -1,4 +1,5 @@
 import hashlib
+import json
 
 def valid_proof(last_proof, proof):
     guess = f'{last_proof}{proof}'.encode()

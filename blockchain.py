@@ -1,7 +1,7 @@
 import hashlib
 import json
 from time import time
-from .utils import valid_proof, hash
+from utils import valid_proof, hash
 
 class Blockchain(object):
     def __init__(self):
@@ -45,16 +45,24 @@ class Blockchain(object):
         while valid_proof(last_proof, proof) is False:
             proof += 1
         return proof
-
+    
     def valid_chain(self, chain):
         last_block = chain[0]
         current_index = 1
+
         while current_index < len(chain):
             block = chain[current_index]
+            print(f'{last_block}')
+            print(f'{block}')
+            print("\n------------\n")
+
             if block['previous_hash'] != self.hash(last_block):
                 return False
+            
             if not valid_proof(last_block['proof'], block['proof']):
                 return False
+            
             last_block = block
             current_index += 1
+        
         return True
