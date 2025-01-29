@@ -126,7 +126,7 @@ To run the Flask app locally:
     ```bash
     python app.py --port 5000
     ```
-
+<!--
 ## Contributing
 
 1. Fork the repository.
@@ -134,6 +134,7 @@ To run the Flask app locally:
 3. Commit your changes (`git commit -am 'Add new feature'`).
 4. Push to the branch (`git push origin feature-branch`).
 5. Create a new Pull Request.
+-->
 
 ## License
 
