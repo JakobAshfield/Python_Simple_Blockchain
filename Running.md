@@ -60,24 +60,31 @@ You can interact with the blockchain via the following endpoints using tools lik
 ### Example with `Postman`
 
 1. **Mine a new block**
+   
 ![Screenshot 2025-01-29 at 12 37 32 PM](https://github.com/user-attachments/assets/fad24c3f-745d-4ef3-a93b-5ac51eabd18e)
 
-2. **Mine a new block on a different node**
+3. **Mine a new block on a different node**
+
 ![Screenshot 2025-01-29 at 12 37 53 PM](https://github.com/user-attachments/assets/22867513-d472-4f0a-b508-7b37efb56782)
 
-3. **Get the blockchain data**
+5. **Get the blockchain data**
+
 ![Screenshot 2025-01-29 at 12 38 03 PM](https://github.com/user-attachments/assets/c4c15ebe-b756-484e-b6ae-ff0421e7488d)
 
-4. **Register a new node**
+7. **Register a new node**
+
 ![Screenshot 2025-01-29 at 12 38 26 PM](https://github.com/user-attachments/assets/2e6b7aae-c802-4504-b8f4-84783c2671cc)
 
 You may need to add a new header like the one below (all Post requests):
+
 ![Screenshot 2025-01-29 at 12 38 15 PM](https://github.com/user-attachments/assets/55cb904b-b998-4d29-a466-29f48cc8c744)
 
 5. **Resolve the block chain**
+
 ![Screenshot 2025-01-29 at 12 38 39 PM](https://github.com/user-attachments/assets/c948d9cf-5760-4c83-be9f-077f7e670c53)
 
-6. **Add a new transaction**
+7. **Add a new transaction**
+
 ![Screenshot 2025-01-29 at 12 41 34 PM](https://github.com/user-attachments/assets/a80a3610-9be2-4b7f-9ba7-99d9a4125078)
 
 
